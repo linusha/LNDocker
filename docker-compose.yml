@@ -8,6 +8,3 @@ services:
     build: ./lively-storage
     ports:
       - "5984:5984"
-  redis:
-    image: "redis:alpine"
-
