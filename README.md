@@ -1,5 +1,6 @@
 # LNDocker
-Docker Environment for Lively-Next
+Docker Environment for Lively-Next.
+This is both a lively-next server (port 9011) and a couchdb server (port 5984) running on the same host
 
 # Prerequisites
 Docker and Docker-Compose
