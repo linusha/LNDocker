@@ -1,7 +1,7 @@
 server {
                 listen 80;
                 location / {
-                        proxy_pass http://127.0.0.1:9011/worlds;
+                        proxy_pass http://127.0.0.1:9011/;
                 }
                 location /couchdb {
                         proxy_pass http://127.0.0.1:5984/;
