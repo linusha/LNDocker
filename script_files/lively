@@ -1,6 +1,9 @@
 server {
                 listen 80;
                 location / {
+                        if ( $request_method = GET ) {
+                          rewrite  ^/$  /index.html  permanent;
+                        }
                         proxy_pass http://127.0.0.1:9011/;
                 }
                 location /couchdb {
