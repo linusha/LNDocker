@@ -3,8 +3,8 @@ services:
   lively-next:
     build: ./lively-server
     ports:
-      - "9011:9011"
+      - "127.0.0.1:9011:9011"
   lively-storage:
     build: ./lively-storage
     ports:
-      - "5984:5984"
+      - "127.0.0.1:5984:5984"
