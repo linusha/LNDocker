@@ -15,20 +15,19 @@ curl -L https://github.com/docker/compose/releases/download/1.13.0/docker-compos
 sudo chmod +x /usr/local/bin/docker-compose
 
 #enable ssh, block others
-
-enable ufw
-ufw disallow incoming
+ufw --force enable
+ufw default deny incoming
 ufw allow ssh
 
 #get nginx
 apt-get update && apt-get install nginx -y
 
 #allow nginx through ufw
-ufw allow 'Nginx HTTPS'
+ufw allow 'Nginx HTTP'
 
 #create symlink for lively server config
 rm -v /etc/nginx/sites-enabled/default
-ln -s ./script_files/lively /etc/nginx/sites-enabled/lively
+ln -s $(pwd)/script_files/lively /etc/nginx/sites-enabled/lively
 
 #restart nginx
 nginx -s reload
