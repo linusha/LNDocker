@@ -15,9 +15,10 @@ curl -L https://github.com/docker/compose/releases/download/1.13.0/docker-compos
 sudo chmod +x /usr/local/bin/docker-compose
 
 #enable ssh, block others
+
+enable ufw
 ufw disallow incoming
 ufw allow ssh
-enable ufw
 
 #get nginx
 apt-get update && apt-get install nginx -y
