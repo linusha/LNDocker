@@ -31,3 +31,9 @@ ln -s ./script_files/lively /etc/nginx/sites-enabled/lively
 
 #restart nginx
 nginx -s reload
+
+mkdir ./lively-storage/dbs/
+mkdir ./lively-server/server/
+
+docker-compose up -d
+
