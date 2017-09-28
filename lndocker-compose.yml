@@ -5,11 +5,11 @@ services:
       ports:
         - mode: host
           target: 9011
-          published: 9011
+          published: 80
       deploy:
         mode: "global"
-      networks:
-        - frontend
+#      networks:
+#        - frontend
     couch-db:
       image: deitrus/couch-db
       ports:
@@ -18,9 +18,16 @@ services:
         published: 5984 
       deploy:
         mode: "global"
-      networks:
-        - frontend
+    couch2:
+      image: deitrus/couch-db
+      ports:
+        - mode: host
+          target: 5984
+      deploy:
+        mode: "global"
+#      networks:
+#        - frontend
 
-networks:
-  frontend:
-    driver: overlay
+#networks:
+#  frontend:
+#    driver: overlay
