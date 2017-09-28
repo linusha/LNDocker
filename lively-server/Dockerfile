@@ -1,5 +1,4 @@
 FROM deitrus/scipyflasknode
-ADD ./server /var/www/lively-dev
 WORKDIR /var/www/lively-dev
 RUN cd $(npm root -g)/npm && \
 npm install fs-extra && \

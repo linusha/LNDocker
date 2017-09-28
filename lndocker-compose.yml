@@ -1,0 +1,26 @@
+version: '3.3'
+services:
+    lively-next:
+      image: deitrus/lively-next
+      ports:
+        - mode: host
+          target: 9011
+          published: 9011
+      deploy:
+        mode: "global"
+      networks:
+        - frontend
+    couch-db:
+      image: deitrus/couch-db
+      ports:
+      - mode: host
+        target: 5984
+        published: 5984 
+      deploy:
+        mode: "global"
+      networks:
+        - frontend
+
+networks:
+  frontend:
+    driver: overlay
